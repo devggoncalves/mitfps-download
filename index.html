@@ -18,7 +18,7 @@
     .wrap{width:min(1220px,calc(100% - 88px));margin-inline:auto}
     header{height:94px;display:flex;align-items:center;justify-content:space-between;gap:22px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
     .brand{display:inline-flex;align-items:center;gap:13px;font-size:1.3rem;font-weight:900;letter-spacing:-.065em}
-    .mark{width:46px;height:46px;object-fit:cover;object-position:center;border-radius:12px;background:#0c0c0c;box-shadow:0 8px 18px #d315322a}
+    .mark{width:92px;height:58px;object-fit:contain;background:transparent}
     .header-right{display:flex;align-items:center;gap:38px}
     .header-note{color:#848086;font-size:.79rem;letter-spacing:.13em;font-weight:800;text-transform:uppercase}
     .header-link{padding:12px 18px;border:1px solid #e9d6da;border-radius:12px;color:var(--red);font-size:.86rem;font-weight:800;transition:background .2s,transform .2s,box-shadow .2s}
@@ -42,7 +42,7 @@
     .visual:after{content:"";position:absolute;width:590px;height:590px;border:1px solid #ffffff30;border-radius:50%;left:18%;top:15%;box-shadow:0 0 0 55px #ffffff0d,0 0 0 110px #ffffff0a,0 0 0 165px #ffffff08;animation:spin 28s linear infinite}
     .visual-top{position:absolute;z-index:2;top:35px;left:35px;right:35px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.16em}
     .visual-top span:last-child{border:1px solid #ffffff66;border-radius:99px;padding:9px 12px}
-    .visual-logo{position:absolute;z-index:2;left:50%;top:46%;width:min(78%,520px);transform:translate(-50%,-50%);mix-blend-mode:screen;filter:drop-shadow(0 18px 28px #780b2866);animation:float 5.5s ease-in-out infinite;user-select:none;pointer-events:none}
+    .visual-logo{position:absolute;z-index:2;left:50%;top:44%;width:min(86%,620px);transform:translate(-50%,-50%);background:#0c0c0c;border-radius:28px;padding:10px 18px;box-shadow:0 24px 50px #3a061466;animation:float 5.5s ease-in-out infinite;user-select:none;pointer-events:none}
     .visual-word{position:absolute;z-index:1;left:-.065em;bottom:9%;color:#ffffff38;font-size:clamp(11rem,22vw,20rem);line-height:.72;font-weight:950;font-style:italic;letter-spacing:-.14em;transform:rotate(-9deg);user-select:none;white-space:nowrap}
     .visual-bottom{position:absolute;z-index:2;left:35px;right:35px;bottom:32px;display:flex;justify-content:space-between;gap:10px;color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.16em}
     .rule{height:1px;background:var(--line);margin-top:45px}
@@ -63,7 +63,7 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="#inicio" aria-label="MITFPS, início"><img class="mark" src="mitfps-logo.png" alt="">MITFPS</a>
+      <a class="brand" href="#inicio" aria-label="MITFPS, início"><img class="mark" src="mitfps-logo.png?v=3" alt="">MITFPS</a>
       <div class="header-right"><span class="header-note">Seu PC no controle</span><a class="header-link" href="#download">Ir para download ↗</a></div>
     </header>
     <main id="inicio">
@@ -78,12 +78,12 @@
               Baixar MITFPS
               <span aria-hidden="true">↗</span>
             </a>
-            <span class="support">Download para Windows<br>Arquivo: MITFPS-Setup.exe</span>
+            <span class="support">Versão 0.4.1 para Windows<br>Arquivo: MITFPS-Setup.exe</span>
           </div>
         </div>
         <div class="visual" aria-hidden="true">
           <div class="visual-top"><span>MITFPS / WINDOWS</span><span>01 — 01</span></div>
-          <img class="visual-logo" src="mitfps-logo.png" alt="">
+          <img class="visual-logo" src="mitfps-logo.png?v=3" alt="">
           <div class="visual-word">FPS</div>
           <div class="visual-bottom"><span>CONTROLE EM CADA AJUSTE</span><span>↗</span></div>
         </div>
