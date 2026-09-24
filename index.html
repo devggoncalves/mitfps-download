@@ -37,6 +37,8 @@
     .download-btn:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,#ffffff55 48%,transparent 62%);transform:translateX(-120%);animation:sheen 3.6s 1.2s ease-in-out infinite}
     .download-btn svg{width:20px;height:20px;flex:none}
     .support{color:#777278;font-size:.86rem;line-height:1.45}
+    .offline-btn{display:inline-flex;justify-content:center;align-items:center;min-height:64px;padding:0 22px;border:1px solid #e9d6da;border-radius:13px;color:var(--red);font-weight:800;transition:background .2s,transform .2s}
+    .offline-btn:hover{background:#fff0f2;transform:translateY(-2px)}
     .visual{min-height:540px;position:relative;overflow:hidden;border-radius:30px;background:radial-gradient(ellipse at 68% 20%,#ff6a79 0%,transparent 38%),linear-gradient(150deg,#ed2548 6%,#c30f36 47%,#800c29 100%);box-shadow:0 30px 75px #671a2b2c;isolation:isolate;animation:panel .9s .12s cubic-bezier(.2,.7,.2,1) both}
     .visual:before{content:"";position:absolute;inset:0;opacity:.35;background-image:linear-gradient(#ffffff24 1px,transparent 1px),linear-gradient(90deg,#ffffff24 1px,transparent 1px);background-size:50px 50px;mask-image:linear-gradient(to top,#000,transparent 86%);animation:grid 14s linear infinite}
     .visual:after{content:"";position:absolute;width:590px;height:590px;border:1px solid #ffffff30;border-radius:50%;left:18%;top:15%;box-shadow:0 0 0 55px #ffffff0d,0 0 0 110px #ffffff0a,0 0 0 165px #ffffff08;animation:spin 28s linear infinite}
@@ -78,7 +80,8 @@
               Baixar MITFPS
               <span aria-hidden="true">↗</span>
             </a>
-            <span class="support">Versão 0.4.1 para Windows<br>Arquivo: MITFPS-Setup.exe</span>
+            <a class="offline-btn" href="https://github.com/devggoncalves/mitfps-download/releases/download/v0.4.1/MITFPS-Offline-Setup.exe">Versão offline · 3 dias</a>
+            <span class="support">A versão online precisa da API.<br>A offline entra sem internet e expira 3 dias após o primeiro login.</span>
           </div>
         </div>
         <div class="visual" aria-hidden="true">
