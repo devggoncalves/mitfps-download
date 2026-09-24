@@ -1,56 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MITFPS — Download</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d31532">
+  <meta name="description" content="Conheça o MITFPS, uma ferramenta para ajustes de desempenho no Windows. Acesse o download.">
+  <title>MITFPS — Ajuste seu PC. Entre no jogo.</title>
+  <link rel="icon" href="mitfps-logo.png">
   <style>
-    :root { color-scheme: light; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Segoe UI", sans-serif;
-      color: #1f1416;
-      background: linear-gradient(160deg, #fff 0%, #fff7f7 48%, #ffdde0 100%);
-    }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 20px;
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: 42px;
-      letter-spacing: -0.04em;
-    }
-    .version { color: #b91c1c; font-weight: 700; }
-    p { color: #6e5c60; line-height: 1.5; }
-    a.download {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 14px 28px;
-      border-radius: 12px;
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-      background: linear-gradient(90deg, #991b1b, #dc2626 55%, #ef4444);
-    }
-    ul { padding-left: 18px; color: #1f1416; }
-    li { margin: 6px 0; }
+    :root{color-scheme:light;--red:#d31532;--deep:#970b28;--ink:#1d1b22;--muted:#69656c;--paper:#faf9f9;--line:#e9e4e5}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    button,a{-webkit-tap-highlight-color:transparent}
+    a:focus-visible{outline:3px solid #ff8d9f;outline-offset:5px}
+    .wrap{width:min(1220px,calc(100% - 88px));margin-inline:auto}
+    header{height:94px;display:flex;align-items:center;justify-content:space-between;gap:22px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+    .brand{display:inline-flex;align-items:center;gap:13px;font-size:1.3rem;font-weight:900;letter-spacing:-.065em}
+    .mark{width:46px;height:46px;object-fit:cover;object-position:center;border-radius:12px;background:#0c0c0c;box-shadow:0 8px 18px #d315322a}
+    .header-right{display:flex;align-items:center;gap:38px}
+    .header-note{color:#848086;font-size:.79rem;letter-spacing:.13em;font-weight:800;text-transform:uppercase}
+    .header-link{padding:12px 18px;border:1px solid #e9d6da;border-radius:12px;color:var(--red);font-size:.86rem;font-weight:800;transition:background .2s,transform .2s,box-shadow .2s}
+    .header-link:hover{background:#fff0f2;transform:translateY(-2px);box-shadow:0 10px 20px #d3153214}
+    main{padding:25px 0 70px}
+    .hero{min-height:605px;display:grid;grid-template-columns:minmax(0,1fr) minmax(430px,.97fr);gap:32px;align-items:center}
+    .copy{padding:20px 0 48px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--red);font-size:.8rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase;animation:rise .7s .08s cubic-bezier(.2,.7,.2,1) both}
+    .eyebrow:before{content:"";width:28px;height:2px;background:currentColor}
+    h1{max-width:680px;margin:28px 0 22px;font-size:clamp(3.65rem,6.6vw,6.7rem);line-height:.99;letter-spacing:-.084em;font-weight:900;animation:rise .75s .14s cubic-bezier(.2,.7,.2,1) both}
+    h1 span{color:var(--red)}
+    .lead{max-width:520px;margin:0;color:var(--muted);font-size:1.13rem;line-height:1.7;animation:rise .75s .22s cubic-bezier(.2,.7,.2,1) both}
+    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:19px;margin-top:39px;animation:rise .75s .3s cubic-bezier(.2,.7,.2,1) both}
+    .download-btn{position:relative;overflow:hidden;display:inline-flex;justify-content:center;align-items:center;gap:18px;min-height:64px;padding:0 25px;background:linear-gradient(120deg,#ee2846 0%,#b30d2f 100%);color:#fff;border-radius:13px;font-weight:800;font-size:1rem;box-shadow:0 15px 32px #bf12343b;transition:transform .2s,box-shadow .2s}
+    .download-btn:hover{transform:translateY(-3px);box-shadow:0 21px 37px #bf12344d}
+    .download-btn:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,#ffffff55 48%,transparent 62%);transform:translateX(-120%);animation:sheen 3.6s 1.2s ease-in-out infinite}
+    .download-btn svg{width:20px;height:20px;flex:none}
+    .support{color:#777278;font-size:.86rem;line-height:1.45}
+    .visual{min-height:540px;position:relative;overflow:hidden;border-radius:30px;background:radial-gradient(ellipse at 68% 20%,#ff6a79 0%,transparent 38%),linear-gradient(150deg,#ed2548 6%,#c30f36 47%,#800c29 100%);box-shadow:0 30px 75px #671a2b2c;isolation:isolate;animation:panel .9s .12s cubic-bezier(.2,.7,.2,1) both}
+    .visual:before{content:"";position:absolute;inset:0;opacity:.35;background-image:linear-gradient(#ffffff24 1px,transparent 1px),linear-gradient(90deg,#ffffff24 1px,transparent 1px);background-size:50px 50px;mask-image:linear-gradient(to top,#000,transparent 86%);animation:grid 14s linear infinite}
+    .visual:after{content:"";position:absolute;width:590px;height:590px;border:1px solid #ffffff30;border-radius:50%;left:18%;top:15%;box-shadow:0 0 0 55px #ffffff0d,0 0 0 110px #ffffff0a,0 0 0 165px #ffffff08;animation:spin 28s linear infinite}
+    .visual-top{position:absolute;z-index:2;top:35px;left:35px;right:35px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.16em}
+    .visual-top span:last-child{border:1px solid #ffffff66;border-radius:99px;padding:9px 12px}
+    .visual-logo{position:absolute;z-index:2;left:50%;top:46%;width:min(78%,520px);transform:translate(-50%,-50%);mix-blend-mode:screen;filter:drop-shadow(0 18px 28px #780b2866);animation:float 5.5s ease-in-out infinite;user-select:none;pointer-events:none}
+    .visual-word{position:absolute;z-index:1;left:-.065em;bottom:9%;color:#ffffff38;font-size:clamp(11rem,22vw,20rem);line-height:.72;font-weight:950;font-style:italic;letter-spacing:-.14em;transform:rotate(-9deg);user-select:none;white-space:nowrap}
+    .visual-bottom{position:absolute;z-index:2;left:35px;right:35px;bottom:32px;display:flex;justify-content:space-between;gap:10px;color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.16em}
+    .rule{height:1px;background:var(--line);margin-top:45px}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 0 0;color:#777278;font-size:.85rem;line-height:1.5}
+    .footer-row strong{color:var(--ink)}
+    .footer-row p{margin:0}
+    @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes panel{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+    @keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+    @keyframes spin{to{transform:rotate(342deg)}}
+    @keyframes grid{to{background-position:50px 50px,50px 50px}}
+    @keyframes sheen{0%,62%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+    @media(max-width:980px){.hero{grid-template-columns:1fr;gap:20px}.copy{padding:20px 0 10px}.visual{min-height:430px}.visual-word{font-size:clamp(12rem,39vw,23rem)}main{padding-top:5px}}
+    @media(max-width:600px){.wrap{width:min(100% - 36px,500px)}header{height:76px}.header-note{display:none}.header-link{padding:10px 12px;font-size:.78rem}.hero{min-height:unset;gap:32px}.copy{padding-top:25px}h1{font-size:clamp(3.55rem,15vw,5.5rem);margin:22px 0 19px}.lead{font-size:1rem}.actions{margin-top:30px}.download-btn{width:100%}.support{width:100%;text-align:center;margin-top:-5px}.visual{min-height:360px;border-radius:22px}.visual-top{top:24px;left:24px;right:24px}.visual-bottom{left:24px;right:24px;bottom:24px}.visual-word{font-size:clamp(10.8rem,43vw,15rem);bottom:17%}.rule{margin-top:35px}.footer-row{align-items:flex-start;flex-direction:column;gap:6px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <main>
-    <h1>MITFPS</h1>
-    <p class="version">Versão 0.4.1 para Windows 10 e 11, 64 bits</p>
-    <p>Otimizador do Windows e do Point Blank. A instalação pede permissão de administrador e substitui uma versão já instalada.</p>
-    <a class="download" href="https://github.com/devggoncalves/mitfps-download/releases/download/v0.4.1/MITFPS-Setup.exe">Baixar MITFPS-Setup.exe</a>
-    <ul>
-      <li>Windows 10 ou 11, 64 bits</li>
-      <li>Não precisa instalar o .NET à parte</li>
-      <li>Mantenha o programa aberto enquanto joga</li>
-    </ul>
-  </main>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#inicio" aria-label="MITFPS, início"><img class="mark" src="mitfps-logo.png" alt="">MITFPS</a>
+      <div class="header-right"><span class="header-note">Seu PC no controle</span><a class="header-link" href="#download">Ir para download ↗</a></div>
+    </header>
+    <main id="inicio">
+      <section class="hero" aria-labelledby="titulo">
+        <div class="copy" id="download">
+          <span class="eyebrow">MITFPS para Windows</span>
+          <h1 id="titulo">Ajuste seu PC.<br><span>Entre no jogo.</span></h1>
+          <p class="lead">Reúna seus ajustes de desempenho em um só lugar e deixe seu Windows do jeito que você prefere jogar.</p>
+          <div class="actions">
+            <a class="download-btn" href="https://github.com/devggoncalves/mitfps-download/releases/download/v0.4.1/MITFPS-Setup.exe" aria-label="Baixar MITFPS para Windows">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3"/></svg>
+              Baixar MITFPS
+              <span aria-hidden="true">↗</span>
+            </a>
+            <span class="support">Download para Windows<br>Arquivo: MITFPS-Setup.exe</span>
+          </div>
+        </div>
+        <div class="visual" aria-hidden="true">
+          <div class="visual-top"><span>MITFPS / WINDOWS</span><span>01 — 01</span></div>
+          <img class="visual-logo" src="mitfps-logo.png" alt="">
+          <div class="visual-word">FPS</div>
+          <div class="visual-bottom"><span>CONTROLE EM CADA AJUSTE</span><span>↗</span></div>
+        </div>
+      </section>
+      <div class="rule"></div>
+      <div class="footer-row"><p><strong>MITFPS</strong> · Seu espaço para ajustes no Windows.</p><p>© <span id="year">2026</span> MITFPS</p></div>
+    </main>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
